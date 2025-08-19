@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
 // Day 1(23/12/24)
 ////First Program
 // #include <iostream>
@@ -2390,8 +2394,7 @@
 // }
 
 
-#include<bits/stdc++.h>
-using namespace std;
+
 // //Pairs
 // int main(){
 //     pair<int,int>p1={1,5};
@@ -2465,3 +2468,423 @@ using namespace std;
 //         cout<<arr[i]<<" ";
 //     }
 // }
+
+// void swap(int& a,int& b){
+//     int temp=a;
+//     a=b;
+//     b=temp;
+// }
+
+// void SelectionSort(vector<int>&arr,int n){
+//     for(int i=0;i<n-1;i++){
+//         int idx=i;
+//         for(int j=i+1;j<n;j++){
+//             if(arr[j]<arr[idx]) idx=j;
+//         }
+//         swap(arr[i],arr[idx]);
+//     }
+// }
+
+// void BubbleSort(vector<int> &arr,int n){
+//     for(int i=0;i<n-1;i++){
+//         bool swapped=false;
+//         for(int j=0;j<n-1;j++){
+//             if(arr[j]>arr[j+1]){
+//                 swap(arr[j],arr[j+1]);
+//                 swapped=true;
+//             }
+//         }
+//         if(!swapped) break;
+//     }
+// }
+
+// void InsertionSort(vector<int> &arr,int n){
+//     for(int i=1;i<n;i++){
+//         int pivot=arr[i];
+//         int j=i-1;
+//         while(j>=0 && arr[j]>pivot){
+//             arr[j+1]=arr[j];
+//             j=j-1;
+//         }
+//         arr[j+1]=pivot;
+//     }
+// }
+
+// void RecursiveInsertionSort(vector<int> &arr,int n){
+//     if(n<=1) return;
+//     RecursiveInsertionSort(arr,n-1);
+//     int last=arr[n-1];
+//     int j=n-2;
+//     while(j>=0 && arr[j]>last){
+//         arr[j+1]=arr[j];
+//         j--;
+//     }
+//     arr[j+1]=last;
+// }
+
+// void RecursiveBubbleSort(vector<int> &arr,int n){
+//     if(n==1) return;
+//     bool swapped=false;;
+//     for(int i=0;i<n-1;i++){
+//         if(arr[i]>arr[i+1]){
+//             swap(arr[i],arr[i+1]);
+//             swapped=true;
+//         }
+//     }
+//     if(!swapped) return;
+//     RecursiveBubbleSort(arr,n-1);
+// }
+
+// void Merge(vector<int> &arr,int left,int mid,int right){
+//     int n1=mid-left+1;
+//     int n2=right-mid;
+//     vector<int> L(n1),R(n2);
+//     for(int i=0;i<n1;i++) L[i]=arr[left+i];
+//     for(int i=0;i<n2;i++) R[i]=arr[mid+1+i];
+//     int i=0,j=0;
+//     int k=left;
+//     while(i<n1 && j<n2){
+//         if(L[i]<=R[j]){
+//             arr[k]=L[i];
+//             i++;
+//         }else{
+//             arr[k]=R[j];
+//             j++;
+//         }
+//         k++;
+//     }
+//     while(i<n1){
+//         arr[k]=L[i];
+//         i++;k++;
+//     }
+//     while(j<n2){
+//         arr[k]=R[j];
+//         j++;k++;
+//     }
+// }
+// void MergeSort(vector<int>& arr,int left,int right){
+//     if(left>=right) return;
+//     int mid=left+(right-left)/2;
+//     MergeSort(arr,left,mid);
+//     MergeSort(arr,mid+1,right);
+//     Merge(arr,left,mid,right);
+// }
+
+// void QuickSort(arr,low,high){
+
+// }
+// int partition(arr,low,high){
+
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter Number of elements:";
+//     cin>>n;
+//     vector<int> arr(n);
+//     cout<<"Enter Elements:";
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     // SelectionSort(arr,n);
+//     // BubbleSort(arr,n);
+//     // InsertionSort(arr,n);
+//     // RecursiveInsertionSort(arr,n);
+//     // MergeSort(arr,0,n);
+//     // QuickSort(arr,0,n); 
+//     //Write Quick Sort Code and dry run all recursive algos in 
+//     cout<<"Sorted Array:";
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+
+// // 08-08-2025
+// // DUTCH NATIONAL FLAG
+// void dnfsearch(vector<int> &arr,int n){
+//     int left=0,mid=0,right=n-1;
+//     while(mid<=right){
+//         if(arr[mid]==0){
+//             swap(arr[mid],arr[left]);
+//             left++;
+//             mid++;
+//         }
+//         else if(arr[mid]==1) mid++;
+//         else if(arr[mid]==2){
+//             swap(arr[mid],arr[right]);
+//             right--;
+//         }
+//     }
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     vector<int> arr(n);
+//     cout<<"Enter Elements: ";
+//     for(int i=0;i<n;i++) cin>>arr[i]; //Input the array
+//     dnfsearch(arr,n);
+//     cout<<"Sorted array: ";
+//     for(int i=0;i<n;i++) cout<<arr[i]<<" "; //Output the array;
+//     cout<<endl;
+//     return 0;
+// }
+
+// //Moore's Voting Algorithm(majority Element)
+// int mooresalgo(vector<int> &arr){
+//     int n=arr.size();
+//     int cnt=0;
+//     int ele=arr[0];
+//     for(int i=0;i<n;i++){
+//         if(cnt==0) {
+//             ele=arr[i];
+//             cnt=1;
+//         }
+//         else if(arr[i]==ele)cnt++;
+//         else if(arr[i]!=ele)cnt--;
+//     }
+//     int mcnt=0;
+//     for(int i=0;i<n;i++) if(arr[i]==ele) mcnt++;
+//     if(mcnt>n/2) return ele;
+//     else return -1;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter Number Elements: ";
+//     cin>>n;
+//     vector<int> arr(n);
+//     cout<<"Enter Elements: ";
+//     for(int i=0;i<n;i++) cin>>arr[i];
+//     int res=mooresalgo(arr);
+//     if(res==-1) cout<<"No Element is maximum";
+//     else cout<<"Maximum Element: "<<res;
+// }
+
+// // 09-08-2025
+// // Kadane's Algorithm
+// int kadane(vector<int> arr,int n){
+//     int maxi=INT_MIN;
+//     int sum=0;
+//     int start=0,ansend=-1,ansstart=-1;
+//     for(int i=0;i<n;i++){
+//         if(sum==0) ansstart=i;
+//         sum+=arr[i];
+//         if(sum>maxi){
+//             maxi=sum;
+//             ansstart=start;
+//             ansend=i;
+//         }
+//         if(sum<0) sum=0;
+//     }
+//     cout<<"Maximum Sum can be: "<<maxi<<endl;
+//     cout<<"Subarray which gave MaxSum is :";
+//     for(int i=ansstart;i<ansend+1;i++) cout<<arr[i]<<" ";
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter Number of Elements: ";
+//     cin>>n;
+//     vector<int> arr(n);
+//     cout<<"Enter Elements: ";
+//     for(int i=0;i<n;i++) cin>>arr[i];
+//     kadane(arr,n);
+//     return 0;
+// }
+
+// // 10-08-2025
+// Best time to buy and sell a stock
+// int bsstock(vector<int> arr,int n){
+//     int buy=arr[0];
+//     int profit=0;
+//     for(int i=1;i<n;i++){
+//         profit=max(profit,arr[i]-buy);
+//         buy=min(buy,arr[i]);
+//     }
+//     return profit;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter Number of Days: ";
+//     cin>>n;
+//     cout<<"Enter Elements: ";
+//     vector<int> arr(n);
+//     for(int i=0;i<n;i++) cin>>arr[i];
+//     cout<<"Max Profit can be: "<<bsstock(arr,n);
+// }
+
+// Rearrange elements by signs
+// vector<int> rearrange(vector<int>arr,int n){
+//     vector<int> ans(n);
+//     int pos=0,neg=1;
+//     for(int i=0;i<n;i++){
+//         if(arr[i]<0){
+//             if(neg<n){
+//                 ans[neg]=arr[i];
+//                 neg+=2;
+//             }
+//         }else{
+//             if(pos<n){
+//                 ans[pos]=arr[i];
+//                 pos+=2;
+//             }
+//         }
+//     }
+//     return ans;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter number of elements: ";
+//     cin>>n;
+//     cout<<"Enter elements: ";
+//     vector<int> arr(n);
+//     for(int i=0;i<n;i++) cin>>arr[i];
+//     arr=rearrange(arr,n);
+//     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+//     cout<<endl;
+//     return 0;
+// }
+
+// Rearrange elements by signs(2nd kind) - Different numbers of pos and neg elements
+// vector<int> rearrannge(vector<int> arr,int n){
+//     vector<int> pos,neg;
+//     for(int i=0;i<n;i++){
+//         if(arr[i]>=0) pos.push_back(arr[i]);
+//         else neg.push_back(arr[i]);
+//     }
+//     if(pos.size()>neg.size()){
+//         for(int i=0;i<neg.size();i++){
+//             arr[2*i]=pos[i];
+//             arr[2*i+1]=neg[i];
+//         }
+//         int index=2*neg.size();
+//         if(index<n){ 
+//             for(int i=neg.size();i<pos.size();i++){
+//                 arr[index]=pos[i];
+//                 index++;
+//             }
+//         }
+//     }else if(pos.size()<=neg.size()){
+//         for(int i=0;i<pos.size();i++){
+//             arr[2*i]=pos[i];
+//             arr[2*i+1]=neg[i];
+//         }
+//         int index=2*pos.size();
+//         if(index<n) for(int i=pos.size();i<neg.size();i++){
+//             arr[index]=neg[i];
+//             index++;
+//         }
+//     }
+//     return arr;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter number of elements: ";
+//     cin>>n;
+//     cout<<"Enter elements: ";
+//     vector<int> arr(n);
+//     for(int i=0;i<n;i++) cin>>arr[i];
+//     arr=rearrannge(arr,n);
+//     for(int i=0;i<n;i++) cout<<arr[i]<<" ";
+//     cout<<endl;
+//     return 0;
+// }
+
+// // 12-08-2025
+// WAP to insert a value after an index
+// int main(){
+//     int maxsize,target,currsize,idx;
+//     cout<<"Enter size of array: ";cin>>maxsize;
+//     int* arr=new int[maxsize];
+//     cout<<"Enter number of elements you want to enter in the array: ";cin>>currsize;
+//     cout<<"Enter Elements: ";for(int i=0;i<currsize;i++) cin>>arr[i];
+//     cout<<"Enter number to be inserted: ";cin>>target;
+//     cout<<"Enter index before which number should be inserted: ";cin>>idx;
+//     if(currsize>=maxsize){
+//         cout<<"Array is full";
+//         delete[] arr;
+//         return 0;
+//     }
+//     if(idx<-1){
+//         cout<<"Element can't be inserted at this index";
+//         delete[] arr;
+//         return 0;
+//     }
+//     else{
+//         for(int i=currsize-1;i>=idx+1;i--) arr[i+1]=arr[i];
+//         arr[idx+1]=target;
+//         currsize++;
+//     }
+//     for(int i=0;i<currsize;i++) cout<<arr[i]<<" ";
+//     delete[] arr;
+//     return 0;
+// }
+
+// 19-08-2025
+// Set Matrix Zero
+void setmatrixzerobettersolun(vector<vector<int>> &arr, int r, int c){
+    vector<int> rows(r,0);
+    vector<int> cols(c,0);
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            if(arr[i][j]==0){
+                rows[i]=1;
+                cols[j]=1;
+            }
+        }
+    }
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            if(rows[i] || cols[j]) arr[i][j]=0;
+        }
+    }
+}
+void setmatrixzerooptimalsolun(vector<vector<int>> & arr,int r,int c){
+    int col0=1;
+    for(int i=0;i<r;i++){
+        if(arr[i][0]==0) col0=0;
+        for(int j=1;j<c;j++){
+            if(arr[i][j]==0){
+                arr[i][0]=0;
+                arr[0][j]=0;
+            }
+        }
+    }
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            if(arr[i][0]==0 || arr[0][j]==0) arr[i][j]=0;
+        }
+    }
+    if(arr[0][0]==0) for(int i=0;i<c;i++) arr[0][i]=0;
+    if(col0==0) for(int i=0;i<r;i++) arr[i][0]=0;
+}
+int main(){
+    int r,c;
+    cout<<"Enter Number of rows in matrix: ";
+    cin>>r;
+    cout<<"Enter Number of columns in matrix: ";
+    cin>>c;
+    vector<vector<int>> arr(r,vector<int>(c));
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            cout<<"Enter element at ["<<i<<"]["<<j<<"]: ";
+            cin>>arr[i][j];
+        }
+    }
+    cout<<"Original Matrix: \n";
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    // setmatrixzerobettersolun(arr,r,c);
+    setmatrixzerooptimalsolun(arr,r,c);
+
+    cout<<"Zero Matrix: \n";
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
