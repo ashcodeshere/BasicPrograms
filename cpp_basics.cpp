@@ -2820,71 +2820,71 @@ using namespace std;
 // }
 
 // 19-08-2025
-// Set Matrix Zero
-void setmatrixzerobettersolun(vector<vector<int>> &arr, int r, int c){
-    vector<int> rows(r,0);
-    vector<int> cols(c,0);
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            if(arr[i][j]==0){
-                rows[i]=1;
-                cols[j]=1;
-            }
-        }
-    }
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            if(rows[i] || cols[j]) arr[i][j]=0;
-        }
-    }
-}
-void setmatrixzerooptimalsolun(vector<vector<int>> & arr,int r,int c){
-    int col0=1;
-    for(int i=0;i<r;i++){
-        if(arr[i][0]==0) col0=0;
-        for(int j=1;j<c;j++){
-            if(arr[i][j]==0){
-                arr[i][0]=0;
-                arr[0][j]=0;
-            }
-        }
-    }
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            if(arr[i][0]==0 || arr[0][j]==0) arr[i][j]=0;
-        }
-    }
-    if(arr[0][0]==0) for(int i=0;i<c;i++) arr[0][i]=0;
-    if(col0==0) for(int i=0;i<r;i++) arr[i][0]=0;
-}
-int main(){
-    int r,c;
-    cout<<"Enter Number of rows in matrix: ";
-    cin>>r;
-    cout<<"Enter Number of columns in matrix: ";
-    cin>>c;
-    vector<vector<int>> arr(r,vector<int>(c));
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cout<<"Enter element at ["<<i<<"]["<<j<<"]: ";
-            cin>>arr[i][j];
-        }
-    }
-    cout<<"Original Matrix: \n";
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-    // setmatrixzerobettersolun(arr,r,c);
-    setmatrixzerooptimalsolun(arr,r,c);
+// // Set Matrix Zero
+// void setmatrixzerobettersolun(vector<vector<int>> &arr, int r, int c){
+//     vector<int> rows(r,0);
+//     vector<int> cols(c,0);
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             if(arr[i][j]==0){
+//                 rows[i]=1;
+//                 cols[j]=1;
+//             }
+//         }
+//     }
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             if(rows[i] || cols[j]) arr[i][j]=0;
+//         }
+//     }
+// }
+// void setmatrixzerooptimalsolun(vector<vector<int>> & arr,int r,int c){
+//     int col0=1;
+//     for(int i=0;i<r;i++){
+//         if(arr[i][0]==0) col0=0;
+//         for(int j=1;j<c;j++){
+//             if(arr[i][j]==0){
+//                 arr[i][0]=0;
+//                 arr[0][j]=0;
+//             }
+//         }
+//     }
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             if(arr[i][0]==0 || arr[0][j]==0) arr[i][j]=0;
+//         }
+//     }
+//     if(arr[0][0]==0) for(int i=0;i<c;i++) arr[0][i]=0;
+//     if(col0==0) for(int i=0;i<r;i++) arr[i][0]=0;
+// }
+// int main(){
+//     int r,c;
+//     cout<<"Enter Number of rows in matrix: ";
+//     cin>>r;
+//     cout<<"Enter Number of columns in matrix: ";
+//     cin>>c;
+//     vector<vector<int>> arr(r,vector<int>(c));
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             cout<<"Enter element at ["<<i<<"]["<<j<<"]: ";
+//             cin>>arr[i][j];
+//         }
+//     }
+//     cout<<"Original Matrix: \n";
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             cout<<arr[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     // setmatrixzerobettersolun(arr,r,c);
+//     setmatrixzerooptimalsolun(arr,r,c);
 
-    cout<<"Zero Matrix: \n";
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-}
+//     cout<<"Zero Matrix: \n";
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             cout<<arr[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
