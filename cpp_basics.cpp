@@ -2820,71 +2820,115 @@ using namespace std;
 // }
 
 // 19-08-2025
-// Set Matrix Zero
-void setmatrixzerobettersolun(vector<vector<int>> &arr, int r, int c){
-    vector<int> rows(r,0);
-    vector<int> cols(c,0);
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            if(arr[i][j]==0){
-                rows[i]=1;
-                cols[j]=1;
-            }
-        }
-    }
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            if(rows[i] || cols[j]) arr[i][j]=0;
-        }
-    }
-}
-void setmatrixzerooptimalsolun(vector<vector<int>> & arr,int r,int c){
-    int col0=1;
-    for(int i=0;i<r;i++){
-        if(arr[i][0]==0) col0=0;
-        for(int j=1;j<c;j++){
-            if(arr[i][j]==0){
-                arr[i][0]=0;
-                arr[0][j]=0;
-            }
-        }
-    }
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            if(arr[i][0]==0 || arr[0][j]==0) arr[i][j]=0;
-        }
-    }
-    if(arr[0][0]==0) for(int i=0;i<c;i++) arr[0][i]=0;
-    if(col0==0) for(int i=0;i<r;i++) arr[i][0]=0;
-}
-int main(){
-    int r,c;
-    cout<<"Enter Number of rows in matrix: ";
-    cin>>r;
-    cout<<"Enter Number of columns in matrix: ";
-    cin>>c;
-    vector<vector<int>> arr(r,vector<int>(c));
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cout<<"Enter element at ["<<i<<"]["<<j<<"]: ";
-            cin>>arr[i][j];
-        }
-    }
-    cout<<"Original Matrix: \n";
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-    // setmatrixzerobettersolun(arr,r,c);
-    setmatrixzerooptimalsolun(arr,r,c);
+// // Set Matrix Zero
+// void setmatrixzerobettersolun(vector<vector<int>> &arr, int r, int c){
+//     vector<int> rows(r,0);
+//     vector<int> cols(c,0);
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             if(arr[i][j]==0){
+//                 rows[i]=1;
+//                 cols[j]=1;
+//             }
+//         }
+//     }
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             if(rows[i] || cols[j]) arr[i][j]=0;
+//         }
+//     }
+// }
+// void setmatrixzerooptimalsolun(vector<vector<int>> & arr,int r,int c){
+//     int col0=1;
+//     for(int i=0;i<r;i++){
+//         if(arr[i][0]==0) col0=0;
+//         for(int j=1;j<c;j++){
+//             if(arr[i][j]==0){
+//                 arr[i][0]=0;
+//                 arr[0][j]=0;
+//             }
+//         }
+//     }
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             if(arr[i][0]==0 || arr[0][j]==0) arr[i][j]=0;
+//         }
+//     }
+//     if(arr[0][0]==0) for(int i=0;i<c;i++) arr[0][i]=0;
+//     if(col0==0) for(int i=0;i<r;i++) arr[i][0]=0;
+// }
+// int main(){
+//     int r,c;
+//     cout<<"Enter Number of rows in matrix: ";
+//     cin>>r;
+//     cout<<"Enter Number of columns in matrix: ";
+//     cin>>c;
+//     vector<vector<int>> arr(r,vector<int>(c));
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             cout<<"Enter element at ["<<i<<"]["<<j<<"]: ";
+//             cin>>arr[i][j];
+//         }
+//     }
+//     cout<<"Original Matrix: \n";
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             cout<<arr[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     // setmatrixzerobettersolun(arr,r,c);
+//     setmatrixzerooptimalsolun(arr,r,c);
 
-    cout<<"Zero Matrix: \n";
+//     cout<<"Zero Matrix: \n";
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+//             cout<<arr[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+// }
+
+// 20-08-25
+// Spiral Triangle
+// vector<int> spiralOrder(vector<vector<int>>& matrix) {
+//     int n=matrix.size();
+//     int m=matrix[0].size();
+//     vector<int> ans;
+//     int top=0,left=0,bottom=n-1,right=m-1;
+//     while(left<=right && top<=bottom){
+//         for(int i=left;i<=right;i++) ans.push_back(matrix[top][i]);
+//         top++;
+//         for(int i=top;i<=bottom;i++) ans.push_back(matrix[i][right]);
+//         right--;
+//         if(top<=bottom){
+//             for(int i=right;i>=left;i--) ans.push_back(matrix[bottom][i]);
+//             bottom--;
+//         }
+//         if(left<=right){
+//             for(int i=bottom;i>=top;i--) ans.push_back(matrix[i][left]);
+//             left++;
+//         }
+//     }
+//     return ans;
+// }
+
+// Pascal's Triangle
+int nCr(int n,int r){
+    long long res=1;
     for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
+        res=res*(n-i);
+        res=res/(i+1);
     }
+    return (int)(res);
 }
+vector<vector<int>> generate(int n) {
+    vector<vector<int>> ans;
+    for(int row=1;row<=n;row++){
+        vector<int> temp;
+        for(int col=1;col<=row;col++) temp.push_back(nCr(row-1,col-1));
+        ans.push_back(temp);
+    }
+    return ans;
+}
+
