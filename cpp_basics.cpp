@@ -2931,3 +2931,104 @@ using namespace std;
 //     }
 //     return ans;
 // }
+
+// // Major Elements II - Three
+// vector<int> majorelements2(vector<int>arr,int n){
+//     int ele1=INT_MIN,ele2=INT_MIN;
+//     int cnt1=0,cnt2=0;
+//     vector<int> ans;
+//     for(int i=0;i<n;i++){
+//         if(cnt1==0 && arr[i]!=ele2){
+//             cnt1=1;
+//             ele1=arr[i];
+//         }else if(cnt2==0 && arr[i]!=ele1){
+//             cnt2=1;
+//             ele2=arr[i];
+//         }
+//         else if(arr[i]==ele1) cnt1++;
+//         else if(arr[i]==ele2) cnt2++;
+//         else{
+//             cnt1--;cnt2--;
+//         }
+//     }
+//     cnt1=0,cnt2=0;
+//     int minval=n/3;
+//     for(int i=0;i<n;i++){
+//         if(arr[i]==ele1)cnt1++;
+//         else if(arr[i]==ele2)cnt2++;
+//     }
+//     if(cnt1>minval) ans.push_back(ele1);
+//     if(cnt2>minval) ans.push_back(ele2);
+//     return ans;
+// }
+// int main(){
+//     int n;
+//     cout<<"Enter Number of elements: ";
+//     cin>>n;
+//     vector<int> arr(n);
+//     cout<<"Entere elements: ";
+//     for(int j=0;j<n;j++){
+//         cin>>arr[j];
+//     }
+//     vector<int> ans=majorelements2(arr,n);
+//     cout<<"Major Elements are :";
+//     for(int num:ans) cout<<num<<" ";
+// }
+
+
+// // 21-08-25
+// // 3Sum
+// vector<vector<int>> threeSum(vector<int> arr) {
+//     int n=arr.size();
+//     vector<vector<int>> ans;
+//     sort(arr.begin(),arr.end());
+//     for(int i=0;i<n;i++){
+//         if(i!=0 && arr[i]==arr[i-1]) continue;
+//         int j=i+1;
+//         int k=n-1;
+//         while(j<k){
+//             int sum=arr[i]+arr[j]+arr[k];
+//             if(sum<0) j++;
+//             else if(sum>0) k--;
+//             else{
+//                 ans.push_back({arr[i],arr[j],arr[k]});
+//                 j++;k--;
+//                 while(j<k && arr[j]==arr[j-1]) j++;
+//                 while(j<k && arr[k]==arr[k+1]) k--;
+//             } 
+//         }
+//     }
+//     return ans;
+// }
+
+// // 4Sum
+// vector<vector<int>> fourSum(vector<int>& nums, int target) {
+//     int n=nums.size();
+//     vector<vector<int>> ans;
+//     sort(nums.begin(),nums.end());
+//     for(int i=0;i<n-3;i++){
+//         if(i>0 && nums[i]==nums[i-1]) continue;
+//         for(int j=i+1;j<n-2;j++){
+//             if(j>i+1 && nums[j]==nums[j-1]) continue;
+//             int k=j+1;
+//             int l=n-1;
+//             while(k<l){
+//                 long long sum=nums[i]+nums[j];
+//                 sum+=nums[k];
+//                 sum+=nums[l];
+//                 if(sum==target){
+//                     ans.push_back({nums[i],nums[j],nums[k],nums[l]});
+//                     k++;l--;
+//                     while(k<l && nums[k]==nums[k-1]) k++;
+//                     while(k<l && nums[l]==nums[l+1]) l--;
+//                 }
+//                 else if(sum<target) k++;
+//                 else if(sum>target) l--;
+//             }
+//         }
+//     }
+//     return ans;
+// }
+
+
+
