@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/ANSHU/Desktop/Practice/C",
-      "program": "c:/Users/ANSHU/Desktop/Practice/C/build/Debug/outDebug",
+      "cwd": "c:/Users/ANSHU/BasicPrograms",
+      "program": "c:/Users/ANSHU/BasicPrograms/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
