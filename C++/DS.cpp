@@ -1,6 +1,192 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Popular questions and their practice
+
+// #include<iostream>N
+// using namespace std;
+// //Selection Sort 
+// void selectionSort(int n,int arr[]){
+//     cout<<"SELECTION SORT\n";
+//     for(int i=0;i<=n-2;i++){
+//         int min=i;
+//         for(int j=i;j<=n-1;j++){
+//             if(arr[j]<arr[min]) min=j;
+//         }
+//         swap(arr[min],arr[i]);
+//     }
+// }
+
+// //bubble sort
+// void bubblesort(int n,int arr[]){
+//     cout<<"BUBBLE SORT\n";
+//     for(int i=n-1;i>0;i--){
+//         for(int j=0;j<=i-1;j++){
+//             if(arr[j]>arr[j+1]) swap(arr[j],arr[j+1]);
+//         }
+//     }
+// }
+
+// //INSERTION SORT
+// void insertionSort(int n,int arr[]){
+//     cout<<"INSERTION SORT\n";
+//     for(int i=1;i<n;i++){
+//         int j=i;
+//         while(j>0 && (arr[j-1]>arr[j])){
+//             swap(arr[j-1],arr[j]);
+//             j--;
+//         }
+//     }
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter number of elements : ";
+//     cin>>n;
+//     int arr[n];
+//     cout<<"Enter elements:";
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     cout<<"Elements Inserted\n";
+//     //selectionSort(n,arr);
+//     //bubblesort(n,arr);
+//     //insertionSort(n,arr);
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
+// void swap(int& a,int& b){
+//     int temp=a;
+//     a=b;
+//     b=temp;
+// }
+
+// void SelectionSort(vector<int>&arr,int n){
+//     for(int i=0;i<n-1;i++){
+//         int idx=i;
+//         for(int j=i+1;j<n;j++){
+//             if(arr[j]<arr[idx]) idx=j;
+//         }
+//         swap(arr[i],arr[idx]);
+//     }
+// }
+
+// void BubbleSort(vector<int> &arr,int n){
+//     for(int i=0;i<n-1;i++){
+//         bool swapped=false;
+//         for(int j=0;j<n-1;j++){
+//             if(arr[j]>arr[j+1]){
+//                 swap(arr[j],arr[j+1]);
+//                 swapped=true;
+//             }
+//         }
+//         if(!swapped) break;
+//     }
+// }
+
+// void InsertionSort(vector<int> &arr,int n){
+//     for(int i=1;i<n;i++){
+//         int pivot=arr[i];
+//         int j=i-1;
+//         while(j>=0 && arr[j]>pivot){
+//             arr[j+1]=arr[j];
+//             j=j-1;
+//         }
+//         arr[j+1]=pivot;
+//     }
+// }
+
+// void RecursiveInsertionSort(vector<int> &arr,int n){
+//     if(n<=1) return;
+//     RecursiveInsertionSort(arr,n-1);
+//     int last=arr[n-1];
+//     int j=n-2;
+//     while(j>=0 && arr[j]>last){
+//         arr[j+1]=arr[j];
+//         j--;
+//     }
+//     arr[j+1]=last;
+// }
+
+// void RecursiveBubbleSort(vector<int> &arr,int n){
+//     if(n==1) return;
+//     bool swapped=false;;
+//     for(int i=0;i<n-1;i++){
+//         if(arr[i]>arr[i+1]){
+//             swap(arr[i],arr[i+1]);
+//             swapped=true;
+//         }
+//     }
+//     if(!swapped) return;
+//     RecursiveBubbleSort(arr,n-1);
+// }
+
+// void Merge(vector<int> &arr,int left,int mid,int right){
+//     int n1=mid-left+1;
+//     int n2=right-mid;
+//     vector<int> L(n1),R(n2);
+//     for(int i=0;i<n1;i++) L[i]=arr[left+i];
+//     for(int i=0;i<n2;i++) R[i]=arr[mid+1+i];
+//     int i=0,j=0;
+//     int k=left;
+//     while(i<n1 && j<n2){
+//         if(L[i]<=R[j]){
+//             arr[k]=L[i];
+//             i++;
+//         }else{
+//             arr[k]=R[j];
+//             j++;
+//         }
+//         k++;
+//     }
+//     while(i<n1){
+//         arr[k]=L[i];
+//         i++;k++;
+//     }
+//     while(j<n2){
+//         arr[k]=R[j];
+//         j++;k++;
+//     }
+// }
+// void MergeSort(vector<int>& arr,int left,int right){
+//     if(left>=right) return;
+//     int mid=left+(right-left)/2;
+//     MergeSort(arr,left,mid);
+//     MergeSort(arr,mid+1,right);
+//     Merge(arr,left,mid,right);
+// }
+
+// void QuickSort(arr,low,high){
+
+// }
+// int partition(arr,low,high){
+
+// }
+
+// int main(){
+//     int n;
+//     cout<<"Enter Number of elements:";
+//     cin>>n;
+//     vector<int> arr(n);
+//     cout<<"Enter Elements:";
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     // SelectionSort(arr,n);
+//     // BubbleSort(arr,n);
+//     // InsertionSort(arr,n);
+//     // RecursiveInsertionSort(arr,n);
+//     // MergeSort(arr,0,n);
+//     // QuickSort(arr,0,n); 
+//     //Write Quick Sort Code and dry run all recursive algos in 
+//     cout<<"Sorted Array:";
+//     for(int i=0;i<n;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+
 // // 08-08-2025
 // // DUTCH NATIONAL FLAG
 // void dnfsearch(vector<int> &arr,int n){
@@ -402,6 +588,7 @@ using namespace std;
 //     return ans;
 // }
 
+
 // // 4Sum
 // vector<vector<int>> fourSum(vector<int>& nums, int target) {
 //     int n=nums.size();
@@ -430,30 +617,3 @@ using namespace std;
 //     }
 //     return ans;
 // }
-
-
-// // 22-08-25
-// // Longest subarray length with sum zero
-// int maxlen(int A[],int n){
-//     unordered_map<int,int> map;
-//     int maxi=0;int sum=0;
-//     for(int i=0;i<n;i++){
-//         sum+=A[i];
-//         if(sum==0) maxi=i+1;
-//         else{
-//             if(map.find(sum)!=map.end()) maxi=max(maxi,i-map[sum]);
-//             else map[sum]=i;
-//         }
-//     }
-//     return maxi;
-// }
-// int main(){
-//     int n;
-//     cout<<"Enter number of elements:";cin>>n;
-//     int arr[n];
-//     cout<<"Enter Elements: ";
-//     for(int i=0;i<n;i++) cin>>arr[i];
-//     cout<<"Maximum length of array with sum 0: "<<maxlen(arr,n);
-// }
-
-
