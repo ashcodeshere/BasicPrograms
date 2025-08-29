@@ -57,27 +57,29 @@ void transpose(int arr[100][100],int tarr[100][100],int rows,int cols){
         for(int j=0;j<cols;j++)
             tarr[j][i]=arr[i][j];
 }
-int main(){
-    int rows,cols;
-    cout<<"Enter Number of rows and cols: ";
-    cin>>rows>>cols;
-    int arr[100][100];
-    int tarr[100][100];
-    cout<<"\nEnter Elements\n";    
-    for(int i=0;i<rows;i++)
-        for(int j=0;j<cols;j++){
-            cout<<"Enter Element at ["<<i<<"]["<<j<<"]: ";
-            cin>>arr[i][j];
-        }
-    transpose(arr,tarr,rows,cols);
-    cout<<"\nOriginal Array\n";
-    for(int i=0;i<rows;i++){
-        for(int j=0;j<cols;j++) cout<<arr[i][j]<<" ";
-        cout<<endl;
-    }
-    cout<<"\nTransposed Array\n";
-    for(int i=0;i<cols;i++){
-        for(int j=0;j<rows;j++) cout<<tarr[i][j]<<" ";
-        cout<<endl;
-    }
-}
+// int main(){
+//     int rows,cols;
+//     cout<<"Enter Number of rows and cols: ";
+//     cin>>rows>>cols;
+//     int arr[100][100];
+//     int tarr[100][100];
+//     cout<<"\nEnter Elements\n";    
+//     for(int i=0;i<rows;i++)
+//         for(int j=0;j<cols;j++){
+//             cout<<"Enter Element at ["<<i<<"]["<<j<<"]: ";
+//             cin>>arr[i][j];
+//         }
+//     transpose(arr,tarr,rows,cols);
+//     cout<<"\nOriginal Array\n";
+//     for(int i=0;i<rows;i++){
+//         for(int j=0;j<cols;j++) cout<<arr[i][j]<<" ";
+//         cout<<endl;
+//     }
+//     cout<<"\nTransposed Array\n";
+//     for(int i=0;i<cols;i++){
+//         for(int j=0;j<rows;j++) cout<<tarr[i][j]<<" ";
+//         cout<<endl;
+//     }
+// }
+
+// // 30-08-2025
