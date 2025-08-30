@@ -81,5 +81,3 @@ void transpose(int arr[100][100],int tarr[100][100],int rows,int cols){
 //         cout<<endl;
 //     }
 // }
-
-// // 30-08-2025
