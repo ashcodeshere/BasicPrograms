@@ -1,1 +1,2 @@
 This repository is for me for practicing on git and also to be consistent in practicing problems to gain learnings.
+This folder contains some programs which i used to practice this when i was learning.

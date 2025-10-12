@@ -1,5 +1,5 @@
-#include<bits/stdc++.h>
-using namespace std;
+// #include<bits/stdc++.h>
+// using namespace std;
 
 // Popular questions and their practice
 
