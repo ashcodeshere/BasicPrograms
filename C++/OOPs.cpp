@@ -1,1 +1,1 @@
-// Starting soon
+/* Starting soon */
