@@ -1,5 +1,5 @@
-// #include<bits/stdc++.h>
-// using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
 
 // Popular questions and their practice
 
@@ -618,3 +618,41 @@
 //     return ans;
 // }
 
+
+
+// Implementation of Linked List
+struct Node{
+    int data;
+    Node *next;
+};
+int main(){
+    Node *newNode=nullptr,*head=nullptr,*temp=nullptr;
+    int choice=1;
+    cout<<"Insertion........\n";
+    while(choice){
+        newNode=new Node();
+        cout<<"Enter Data: ";
+        cin>>newNode->data;
+        newNode->next=nullptr;
+        if(head==nullptr) temp=head=newNode;
+        else{
+            temp->next=newNode;
+            temp=newNode;
+        }
+        cout<<"Do You want to continue(0,1): ";
+        cin>>choice;
+    }
+    cout<<"Traversal........\n";
+    temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<"->";
+        temp=temp->next;
+    }
+    cout<<"NULL\n";
+    temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<"<-";
+        temp=temp->next;
+    }
+    cout<<"NULL\n";
+}
