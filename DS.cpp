@@ -645,10 +645,72 @@ int main(){
     cout<<"Traversal........\n";
     temp=head;
     while(temp!=nullptr){
-        cout<<temp->data<<"->";
+        cout<<temp->data<<"<-";
         temp=temp->next;
     }
     cout<<"NULL\n";
+// Enter element in beginning
+    cout<<"Enter element in beginning\n";
+    newNode=new Node();
+    cout<<"Enter Data: ";
+    cin>>newNode->data;
+    newNode->next=head;
+    head=newNode;
+    temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<"<-";
+        temp=temp->next;
+    }
+    cout<<"NULL\n";
+// Enter element at end
+    cout<<"Enter element at end\n";
+    newNode=new Node();
+    cout<<"Enter Data: ";
+    cin>>newNode->data;
+    newNode->next=nullptr;
+    if(head==nullptr) head=newNode;
+    else{
+        temp=head;
+        while(temp->next!=nullptr) {
+            temp=temp->next;
+        }
+        temp->next=newNode;
+    }
+    temp=head;
+    while(temp!=nullptr){
+        cout<<temp->data<<"<-";
+        temp=temp->next;
+    }
+    cout<<"NULL\n";
+// Enter element at a specified Position
+    cout<<"Enter at a specified position\n";
+    int pos;
+    cout<<"Enter position: ";
+    cin>>pos;
+    temp=head;
+    int len=0;
+    while(temp!=nullptr){
+        temp=temp->next;
+        len++;
+    }
+    cout<<"Length is: "<<len<<endl;
+    if(pos>len||pos<0) cout<<"Out of Bound";
+    else{
+        newNode=new Node();
+        cout<<"Enter Data: ";
+        cin>>newNode->data;
+        if(pos==0){
+            newNode->next=head;
+            head=newNode;
+        }else{
+            temp=head;
+            for(int i=0;i<pos-1;i++){
+                temp=temp->next;
+            }
+            newNode->next=temp->next;
+            temp->next=newNode;
+        }
+    }
     temp=head;
     while(temp!=nullptr){
         cout<<temp->data<<"<-";
