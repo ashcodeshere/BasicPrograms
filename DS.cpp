@@ -799,4 +799,25 @@ int main(){
     //     temp=temp->next;
     // }
     // cout<<"NULL\n";
+
+
+    // // Reverse a Linked List
+    // cout<<"Reversed Linked List : ";
+    // Node *prevNode=nullptr,*nextNode=nullptr;
+    // temp=head;
+    // while(temp!=nullptr){
+    //     nextNode=temp->next;
+    //     temp->next=prevNode;
+    //     prevNode=temp;
+    //     temp=nextNode;
+    // }
+    // head=prevNode;
+    // temp=head;
+    // while(temp!=nullptr){
+    //     cout<<temp->data<<"->";
+    //     temp=temp->next;
+    // }
+    // cout<<"NULL\n";
+
+    
 }
