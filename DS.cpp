@@ -645,76 +645,158 @@ int main(){
     cout<<"Traversal........\n";
     temp=head;
     while(temp!=nullptr){
-        cout<<temp->data<<"<-";
+        cout<<temp->data<<"->";
         temp=temp->next;
     }
     cout<<"NULL\n";
-// Enter element in beginning
-    cout<<"Enter element in beginning\n";
-    newNode=new Node();
-    cout<<"Enter Data: ";
-    cin>>newNode->data;
-    newNode->next=head;
-    head=newNode;
-    temp=head;
-    while(temp!=nullptr){
-        cout<<temp->data<<"<-";
-        temp=temp->next;
-    }
-    cout<<"NULL\n";
-// Enter element at end
-    cout<<"Enter element at end\n";
-    newNode=new Node();
-    cout<<"Enter Data: ";
-    cin>>newNode->data;
-    newNode->next=nullptr;
-    if(head==nullptr) head=newNode;
-    else{
-        temp=head;
-        while(temp->next!=nullptr) {
-            temp=temp->next;
-        }
-        temp->next=newNode;
-    }
-    temp=head;
-    while(temp!=nullptr){
-        cout<<temp->data<<"<-";
-        temp=temp->next;
-    }
-    cout<<"NULL\n";
-// Enter element at a specified Position
-    cout<<"Enter at a specified position\n";
-    int pos;
-    cout<<"Enter position: ";
-    cin>>pos;
-    temp=head;
-    int len=0;
-    while(temp!=nullptr){
-        temp=temp->next;
-        len++;
-    }
-    cout<<"Length is: "<<len<<endl;
-    if(pos>len||pos<0) cout<<"Out of Bound";
-    else{
-        newNode=new Node();
-        cout<<"Enter Data: ";
-        cin>>newNode->data;
-        if(pos==0){
-            newNode->next=head;
-            head=newNode;
-        }else{
-            temp=head;
-            for(int i=0;i<pos-1;i++){
-                temp=temp->next;
-            }
-            newNode->next=temp->next;
-            temp->next=newNode;
-        }
-    }
-    temp=head;
-    while(temp!=nullptr){
-        cout<<temp->data<<"<-";
-        temp=temp->next;
-    }
-    cout<<"NULL\n";
+
+// ----------------------------------------Insertion--------------------------------------
+
+// // Enter element in beginning
+//     cout<<"Enter element in beginning\n";
+//     newNode=new Node();
+//     cout<<"Enter Data: ";
+//     cin>>newNode->data;
+//     newNode->next=head;
+//     head=newNode;
+//     temp=head;
+//     while(temp!=nullptr){
+//         cout<<temp->data<<"->";
+//         temp=temp->next;
+//     }
+//     cout<<"NULL\n";
+// // Enter element at end
+//     cout<<"Enter element at end\n";
+//     newNode=new Node();
+//     cout<<"Enter Data: ";
+//     cin>>newNode->data;
+//     newNode->next=nullptr;
+//     if(head==nullptr) head=newNode;
+//     else{
+//         temp=head;
+//         while(temp->next!=nullptr) {
+//             temp=temp->next;
+//         }
+//         temp->next=newNode;
+//     }
+//     temp=head;
+//     while(temp!=nullptr){
+//         cout<<temp->data<<"-?";
+//         temp=temp->next;
+//     }
+//     cout<<"NULL\n";
+// // Enter element at a specified Position
+//     cout<<"Enter at a specified position\n";
+//     int pos;
+//     cout<<"Enter position: ";
+//     cin>>pos;
+//     temp=head;
+//     int len=0;
+//     while(temp!=nullptr){
+//         temp=temp->next;
+//         len++;
+//     }
+//     cout<<"Length is: "<<len<<endl;
+//     if(pos>len||pos<0) cout<<"Out of Bound";
+//     else{
+//         newNode=new Node();
+//         cout<<"Enter Data: ";
+//         cin>>newNode->data;
+//         if(pos==0){
+//             newNode->next=head;
+//             head=newNode;
+//         }else{
+//             temp=head;
+//             for(int i=0;i<pos-1;i++){
+//                 temp=temp->next;
+//             }
+//             newNode->next=temp->next;
+//             temp->next=newNode;
+//         }
+//     }
+//     temp=head;
+//     while(temp!=nullptr){
+//         cout<<temp->data<<"->";
+//         temp=temp->next;
+//     }
+//     cout<<"NULL\n";
+
+// ----------------------------------------Deletion--------------------------------------
+
+    // // Delete from Beginning
+    // cout<<"Deletion From beginning........\n";
+    // if(head==nullptr) cout<<"Deletion Not possible List is empty";
+    // else{
+    //     temp=head;
+    //     head=temp->next;
+    //     cout<<"Deleting "<<temp->data<<endl;
+    //     delete temp;
+    //     temp=head;
+    // }
+    // temp=head;
+    // while(temp!=nullptr){
+    //     cout<<temp->data<<"->";
+    //     temp=temp->next;
+    // }
+    // cout<<"NULL\n";
+    // // Delete from end
+    // cout<<"Deletion from end\n";
+    // if(head==nullptr) cout<<"Deletion Not possible List is empty\n";
+    // else if(head->next==nullptr){
+    //     cout<<"Deleting "<<head->data<<endl;
+    //     delete head;
+    //     head=nullptr;
+    // }
+    // else{
+    //     Node *prevNode=nullptr;
+    //     temp=head;
+    //     while(temp->next!=nullptr){
+    //         prevNode=temp;
+    //         temp=temp->next;
+    //     }
+    //     cout<<"Deleting "<<temp->data<<endl;
+    //     prevNode->next=nullptr;
+    //     delete temp;
+    // }
+    // temp=head;
+    // while(temp!=nullptr){
+    //     cout<<temp->data<<"->";
+    //     temp=temp->next;
+    // }
+    // cout<<"NULL\n";
+    // // Delete element from a specified position
+    // cout<<"Deleting element from a specified position\n";
+    // int pos;
+    // cout<<"Enter Position: ";
+    // cin>>pos;
+    // temp=head;
+    // int len=0;
+    // while(temp!=nullptr){
+    //     len++;
+    //     temp=temp->next;
+    // }
+    // cout<<"Length of List: "<<len<<endl;
+    // if(len==0) cout<<"Deletion not possible. List is Empty\n";
+    // else if(len<pos || pos<1) cout<<"Out of Bound\n";
+    // else if(pos==1){
+    //     temp=head;
+    //     head=head->next;
+    //     cout<<"Deleting "<<temp->data<<endl;
+    //     delete temp;
+    // }else{
+    //     Node *prevNode=head;
+    //     for(int i=1;i<pos-1;i++){
+    //         prevNode=prevNode->next;
+    //     }
+    //     temp=prevNode->next;
+    //     prevNode->next=temp->next;
+    //     cout<<"Deleting "<<temp->data<<endl;
+    //     delete temp;
+    // }
+    // temp=head;
+    // while(temp!=nullptr){
+    //     cout<<temp->data<<"->";
+    //     temp=temp->next;
+    // }
+    // cout<<"NULL\n";
 }
