@@ -1023,20 +1023,20 @@ void DeleteAtPos(Node *&head){
     cout<<"Deleted\n";
 }
 
-// int main(){
-//     Node *head=create();
-//     DisplayForward(head);
-//     // InsertAtBegin(head);
-//     // DisplayForward(head);
-//     // InsertAtEnd(head);
-//     // DisplayForward(head);
-//     // InsertAtPos(head);
-//     // DisplayForward(head);
-//     // DeleteAtBegin(head);
-//     // DisplayForward(head);
-//     // DeleteAtEnd(head);
-//     // DisplayForward(head);
-//     // DeleteAtPos(head);
-//     // DisplayForward(head);
-// }
+int main(){
+    Node *head=create();
+    DisplayForward(head);
+    InsertAtBegin(head);
+    DisplayForward(head);
+    InsertAtEnd(head);
+    DisplayForward(head);
+    InsertAtPos(head);
+    DisplayForward(head);
+    DeleteAtBegin(head);
+    DisplayForward(head);
+    DeleteAtEnd(head);
+    DisplayForward(head);
+    DeleteAtPos(head);
+    DisplayForward(head);
+}
 
