@@ -1040,6 +1040,11 @@ using namespace std;
 //     DisplayForward(head);
 // }
 
+// Singly Linkedlist - Searching
+// Doubly Linkedlist (Traversal, Insertion, Deletion, Searching)
+// Circular Linkedlist (Traversal, Insertion, Deletion, Searching)
+
+
 // Basic operations on trees
 // Creation
 // Insertion
@@ -1047,4 +1052,4 @@ using namespace std;
 // Searching
 // Traversal(DFS/BFS)
 // Updating
-// Will be starting studying trees soon
+// Will be starting trees soon
