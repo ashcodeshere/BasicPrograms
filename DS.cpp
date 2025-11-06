@@ -1044,7 +1044,6 @@ using namespace std;
 // Doubly Linkedlist (Traversal, Insertion, Deletion, Searching)
 // Circular Linkedlist (Traversal, Insertion, Deletion, Searching)
 
-
 // Basic operations on trees
 // Creation
 // Insertion
@@ -1053,3 +1052,13 @@ using namespace std;
 // Traversal(DFS/BFS)
 // Updating
 // Will be starting trees soon
+// BST(operations)
+// AVL
+
+// Basic operations on Graph
+// Creation
+// Insertion
+// Deletion
+// Searching
+// Traversal(DFS/BFS)
+// Updating
