@@ -2394,7 +2394,7 @@ using namespace std;
 //     cout<<"Element at top:"<<s.gtop();
 // }
 
-
+// 
 
 // //Pairs
 // int main(){
@@ -2405,7 +2405,7 @@ using namespace std;
 //     pair<int,int>arr[4]={{1,4},{5,7},{8,18},{7,9}};
 //     cout<<arr[1].second<<endl;
 // }
-
+// 
 // //Lists
 // int main(){
 //     list<int>ls;
