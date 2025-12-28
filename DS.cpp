@@ -1080,170 +1080,170 @@ using namespace std;
 
 
 
-struct Node{
-    int data;
-    Node *next;
-    Node *prev;
-};
+// struct Node{
+//     int data;
+//     Node *next;
+//     Node *prev;
+// };
 
-Node *Create(){
-    cout<<"Creating a Doubly Linked List\n";
-    int choice=1;
-    Node *head=nullptr,*newNode,*temp=nullptr;
-    while(choice){
-        newNode=new Node();
-        cout<<"Enter Data: ";
-        cin>>newNode->data;
-        newNode->next=nullptr;
-        newNode->prev=nullptr;
-        if(head==nullptr) head=temp=newNode;
-        else{
-            temp->next=newNode;
-            newNode->prev=temp;
-            temp=newNode;
-        }
-        cout<<"Do you want to continue?(0/1): ";
-        cin>>choice;
-    }
-    return head;
-}
+// Node *Create(){
+//     cout<<"Creating a Doubly Linked List\n";
+//     int choice=1;
+//     Node *head=nullptr,*newNode,*temp=nullptr;
+//     while(choice){
+//         newNode=new Node();
+//         cout<<"Enter Data: ";
+//         cin>>newNode->data;
+//         newNode->next=nullptr;
+//         newNode->prev=nullptr;
+//         if(head==nullptr) head=temp=newNode;
+//         else{
+//             temp->next=newNode;
+//             newNode->prev=temp;
+//             temp=newNode;
+//         }
+//         cout<<"Do you want to continue?(0/1): ";
+//         cin>>choice;
+//     }
+//     return head;
+// }
 
-void DisplayForward(Node *head){
-    cout<<"\nTraversing Doubly Linked List in Forward Direction\n";
-    Node *temp=head;
-    if(head==nullptr){
-        cout<<"List is empty";
-        return;
-    }
-    while(temp!=nullptr){
-        cout<<temp->data<<"<->";
-        temp=temp->next;
-    }
-    cout<<"NULL";
-}
+// void DisplayForward(Node *head){
+//     cout<<"\nTraversing Doubly Linked List in Forward Direction\n";
+//     Node *temp=head;
+//     if(head==nullptr){
+//         cout<<"List is empty";
+//         return;
+//     }
+//     while(temp!=nullptr){
+//         cout<<temp->data<<"<->";
+//         temp=temp->next;
+//     }
+//     cout<<"NULL";
+// }
 
-void DisplayBackward(Node *head){
-    if(head==nullptr) {
-        cout<<"List is empty";
-        return;
-    }
-    Node *temp=head;
-    while(temp->next!=nullptr) temp=temp->next;
-    while(temp!=nullptr){
-        cout<<temp->data<<"<->";
-        temp=temp->prev;
-    }
-    cout<<"NULL\n";
-}
+// void DisplayBackward(Node *head){
+//     if(head==nullptr) {
+//         cout<<"List is empty";
+//         return;
+//     }
+//     Node *temp=head;
+//     while(temp->next!=nullptr) temp=temp->next;
+//     while(temp!=nullptr){
+//         cout<<temp->data<<"<->";
+//         temp=temp->prev;
+//     }
+//     cout<<"NULL\n";
+// }
 
-void InsertAtStart(Node *&head){
-    cout<<"Inserting at Starting\n";
-    Node *newNode=new Node();
-    cout<<"Enter Data: ";
-    cin>>newNode->data;
-    if(head==nullptr)head=newNode;
-    else{
-        newNode->next=head;
-        head->prev=newNode;
-        head=newNode;
-    }
-    cout<<"Inserted\n";
-}
+// void InsertAtStart(Node *&head){
+//     cout<<"Inserting at Starting\n";
+//     Node *newNode=new Node();
+//     cout<<"Enter Data: ";
+//     cin>>newNode->data;
+//     if(head==nullptr)head=newNode;
+//     else{
+//         newNode->next=head;
+//         head->prev=newNode;
+//         head=newNode;
+//     }
+//     cout<<"Inserted\n";
+// }
 
-void InsertAtEnd(Node *&head){ 
-    cout<<"Inserting at Ending\n";
-    Node *newNode;
-    newNode=new Node();
-    cout<<"Enter Data: ";
-    cin>>newNode->data;
-    newNode->next=nullptr;
-    newNode->prev=nullptr;
-    Node *temp=head;
-    if(head==nullptr) head=newNode;
-    else{
-        while(temp->next!=nullptr) temp=temp->next;
-        newNode->prev=temp;
-        temp->next=newNode;
-    }
-    cout<<"Inserted\n";
-}
+// void InsertAtEnd(Node *&head){ 
+//     cout<<"Inserting at Ending\n";
+//     Node *newNode;
+//     newNode=new Node();
+//     cout<<"Enter Data: ";
+//     cin>>newNode->data;
+//     newNode->next=nullptr;
+//     newNode->prev=nullptr;
+//     Node *temp=head;
+//     if(head==nullptr) head=newNode;
+//     else{
+//         while(temp->next!=nullptr) temp=temp->next;
+//         newNode->prev=temp;
+//         temp->next=newNode;
+//     }
+//     cout<<"Inserted\n";
+// }
 
-void InsertAtPos(Node *&head){
-    cout<<"Inserting at a specific pos\n";
-    int p;
-    cout<<"Enter position to be inserted: ";
-    cin>>p;
-    int len=0;
-    Node *newNode,*temp=head;
-    newNode=new Node();
-    cout<<"Enter Data: ";
-    cin>>newNode->data;
-    newNode->prev=nullptr;
-    newNode->next=nullptr;
-    while(temp->next!=nullptr){
-        temp=temp->next;
-        len+=1;
-    }
-    cout<<"Length of Linked List is : "<<len<<endl;
-    temp=head;
-    if(p<0 && p>len){
-        cout<<"Insertion not possible. Invalid Index";
-    }else if(p==0){
-        newNode->next=head;
-        if(head!=nullptr)head->prev=newNode;
-        head=newNode;
-        return;
-    }
-    else{
-        if(p==len+1){
-            temp=head;
-            while(temp->next!=nullptr) temp=temp->next;
-            temp->next=newNode;
-            newNode->prev=temp;
-            return;
-        }
-        temp=head;
-        for(int i=0;i<p;i++) temp=temp->next;
-        newNode->next=temp->next;
-        newNode->prev=temp;
-        if(temp->next!=nullptr) temp->next->prev=newNode;
-        temp->next=newNode;
-    }
-    cout<<"Inserted\n";
+// void InsertAtPos(Node *&head){
+//     cout<<"Inserting at a specific pos\n";
+//     int p;
+//     cout<<"Enter position to be inserted: ";
+//     cin>>p;
+//     int len=0;
+//     Node *newNode,*temp=head;
+//     newNode=new Node();
+//     cout<<"Enter Data: ";
+//     cin>>newNode->data;
+//     newNode->prev=nullptr;
+//     newNode->next=nullptr;
+//     while(temp->next!=nullptr){
+//         temp=temp->next;
+//         len+=1;
+//     }
+//     cout<<"Length of Linked List is : "<<len<<endl;
+//     temp=head;
+//     if(p<0 && p>len){
+//         cout<<"Insertion not possible. Invalid Index";
+//     }else if(p==0){
+//         newNode->next=head;
+//         if(head!=nullptr)head->prev=newNode;
+//         head=newNode;
+//         return;
+//     }
+//     else{
+//         if(p==len+1){
+//             temp=head;
+//             while(temp->next!=nullptr) temp=temp->next;
+//             temp->next=newNode;
+//             newNode->prev=temp;
+//             return;
+//         }
+//         temp=head;
+//         for(int i=0;i<p;i++) temp=temp->next;
+//         newNode->next=temp->next;
+//         newNode->prev=temp;
+//         if(temp->next!=nullptr) temp->next->prev=newNode;
+//         temp->next=newNode;
+//     }
+//     cout<<"Inserted\n";
 
-}
+// }
 
-int main(){
-    cout<<"Main Menu\n";
-    int choice=1,n;
-    while(choice){
-        cout<<"Select the adjacent number according to operations you need to perform\n";
-        cout<<"1. Create a Doubly Linked List\n";
-        cout<<"2. Display in forward direction\n";
-        cout<<"3. Display in backward direction\n";
-        cout<<"4. Insertion in Doubly LinkedList\n";
-        cout<<"5.\n";
-        cout<<"6.\n";
-        cout<<"7.\n";
-        cout<<"Enter you choice : ";
-        cin>>n;
-        Node *head;
-        if(n==1) head=Create();
-        else if(n==2) DisplayForward(head);
-        else if(n==3) DisplayBackward(head);
-        else if(n==4){
-            int a;
-            cout<<"1.Insert at Beginning\n";
-            cout<<"2.Insert at End\n";
-            cout<<"3.Insertion at a given position\n";
-            cout<<"Enter operation you want to perform: ";
-            cin>>a;
-            if(a==1) InsertAtStart(head);
-            else if(a==2) InsertAtEnd(head);
-            else if(a==3) InsertAtPos(head);
-        }
-        cout<<"\nDo you want to continue operations(0/1): ";
-        cin>>choice;
-    }
-}
+// int main(){
+//     cout<<"Main Menu\n";
+//     int choice=1,n;
+//     while(choice){
+//         cout<<"Select the adjacent number according to operations you need to perform\n";
+//         cout<<"1. Create a Doubly Linked List\n";
+//         cout<<"2. Display in forward direction\n";
+//         cout<<"3. Display in backward direction\n";
+//         cout<<"4. Insertion in Doubly LinkedList\n";
+//         cout<<"5.\n";
+//         cout<<"6.\n";
+//         cout<<"7.\n";
+//         cout<<"Enter you choice : ";
+//         cin>>n;
+//         Node *head;
+//         if(n==1) head=Create();
+//         else if(n==2) DisplayForward(head);
+//         else if(n==3) DisplayBackward(head);
+//         else if(n==4){
+//             int a;
+//             cout<<"1.Insert at Beginning\n";
+//             cout<<"2.Insert at End\n";
+//             cout<<"3.Insertion at a given position\n";
+//             cout<<"Enter operation you want to perform: ";
+//             cin>>a;
+//             if(a==1) InsertAtStart(head);
+//             else if(a==2) InsertAtEnd(head);
+//             else if(a==3) InsertAtPos(head);
+//         }
+//         cout<<"\nDo you want to continue operations(0/1): ";
+//         cin>>choice;
+//     }
+// }
 
